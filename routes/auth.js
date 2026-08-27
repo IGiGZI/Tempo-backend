@@ -19,6 +19,14 @@ router.post("/signup", async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
     }
 
+    if (!(/\S+@\S+\.\S+/.test(email))) {
+      return res.status(400).json({ message: "Please enter a valid Email" })
+    }
+
+    if (password.length < 6 || !(/[a-zA-Z]/.test(password)) || !(/[0-9]/.test(password))) {
+      return res.status(400).json({ message: "Please enter a valid password" })
+    }
+
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({ email, password: hashedPassword });
