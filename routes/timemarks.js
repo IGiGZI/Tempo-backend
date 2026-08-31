@@ -12,7 +12,7 @@ router.use(authMiddleware);
 // Create a time-mark
 router.post("/", async (req, res) => {
   try {
-    const { duration, note } = req.body;
+    const { duration, note, laps } = req.body;
 
     if (duration === undefined) {
       return res.status(400).json({ message: "Duration is required" });
@@ -22,6 +22,7 @@ router.post("/", async (req, res) => {
       user: req.userId,
       duration,
       note: note || "",
+      laps: laps || []
     });
 
     res.status(201).json(timeMark);

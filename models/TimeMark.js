@@ -8,7 +8,7 @@ const timeMarkSchema = new mongoose.Schema(
       required: true,
     },
     duration: {
-      type: Number, // store as milliseconds or centiseconds — your choice, just be consistent
+      type: Number,
       required: true,
     },
     note: {
@@ -16,6 +16,22 @@ const timeMarkSchema = new mongoose.Schema(
       default: "",
       trim: true,
     },
+    laps: [
+      {
+        lapNum: {
+          type: Number,
+          required: true,
+        },
+        lapDiff: {
+          type: Number,
+          required: true,
+        },
+        lapTime: {
+          type: Number,
+          required: true,
+        }
+      }
+    ]
   },
   { timestamps: true }
 );
