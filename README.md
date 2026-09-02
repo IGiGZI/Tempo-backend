@@ -1,6 +1,6 @@
 # Tempo Backend
 
-A Node.js + Express backend for the Tempo app. Handles user authentication and stores time-marks (saved stopwatch readings with notes) per user, backed by MongoDB.
+A Node.js + Express backend for the Tempo app. Handles user authentication and stores time-marks (saved stopwatch readings with notes and laps) per user, backed by MongoDB.
 
 ## Tech Stack
 
@@ -16,27 +16,6 @@ A Node.js + Express backend for the Tempo app. Handles user authentication and s
 - Auth middleware to protect routes
 - Time-mark CRUD (create, list, delete) scoped to the logged-in user
 
-## Project Structure
-
-```
-backend/
-├── models/
-│   ├── User.js
-│   └── TimeMark.js
-├── routes/
-│   ├── auth.js
-│   └── timeMarks.js
-├── middleware/
-│   └── auth.js
-├── config/
-│   └── db.js
-├── server.js
-├── .env
-└── package.json
-```
-
-*(Adjust this tree to match your actual folder layout.)*
-
 ## Getting Started
 
 ### Prerequisites
@@ -47,8 +26,8 @@ backend/
 ### Installation
 
 ```bash
-git clone <your-repo-url>
-cd stopwatch-backend
+git clone https://github.com/IGiGZI/Tempo-backend
+cd tempo-backend
 npm install
 ```
 
@@ -60,6 +39,7 @@ Create a `.env` file in the root directory:
 PORT=5000
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret
+GOOGLE_CLIENT_ID=your_google_client_id
 ```
 
 ### Running the Server
