@@ -7,12 +7,12 @@ A Node.js + Express backend for the Tempo app. Handles user authentication and s
 - **Runtime:** Node.js
 - **Framework:** Express
 - **Database:** MongoDB Atlas (via Mongoose)
-- **Auth:** JWT (self-built, no external auth library)
+- **Auth:** JWT (self-built) + Google auth
 
 ## Features
 
 - User signup and login with hashed passwords
-- JWT-based authentication
+- JWT-based authentication / Google auth
 - Auth middleware to protect routes
 - Time-mark CRUD (create, list, delete) scoped to the logged-in user
 
